@@ -1,0 +1,382 @@
+@font-face{
+  font-family: "Dubai";
+  src: url("../fonts/Dubai-Regular.woff");
+}
+
+@font-face{
+  font-family: "Franklin Gothic";
+  src: url('../fonts/Franklin Gothic Medium Regular.ttf');
+}
+
+html, body{
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0;
+  position: relative;
+}
+
+/*landing page-------------*/
+
+.my-container{
+  width: 100%;
+  height: 100vh;
+  background-color: #FF8B3E;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+
+.upper{
+  text-transform: uppercase;
+  font-size: 60px;
+}
+
+.my-row-name{
+  height: 35vh;
+  padding-left: 20px;
+  font-family: Dubai;
+}
+
+.my-row-name h1{
+  font-size: 100px;
+  color: black;
+  line-height: 80px;
+}
+
+.my-row-icon{
+  height: 5vh;
+  padding-left: 20px;
+}
+
+.icon{
+  width: 30px;
+  opacity: .8;
+}
+
+.icon:hover{
+  text-decoration: none;
+  decoration: none;
+}
+
+.my-col{
+  padding-left: 30px;
+}
+
+.my-row-me{
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 30px;
+  height: 60vh;
+  color: black;
+  font-family: "Franklin Gothic";
+}
+
+.my-row-me h3{
+  font-family: "Franklin Gothic";
+  font-size: 26px;
+  opacity: .8;
+}
+
+/*about page-------------------*/
+
+.my-container-about{
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+}
+
+.row-spacer{
+  height: 0vh;
+}
+
+.my-row-photo{
+  height: 70vh;
+  object-fit: contain;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.me{
+  max-height: 107%;
+}
+
+.my-row-about{
+  height: 31vh;
+  padding-top: 25px;
+  background-color: #191919;
+}
+
+.my-row-about p{
+  color: white;
+  font-family: "Franklin Gothic";
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  margin-top: 18px;
+}
+
+.roww{
+  margin-top: -25px;
+}
+
+.about-icon{
+  height: 25px;
+}
+
+.col-about{
+}
+
+/*school page-----------------*/
+
+.my-container-school{
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+}
+
+.my-row-education{
+  height: 13vh;
+}
+
+.my-row-education h3{
+  color: white;
+  font-size: 60px;
+  text-align: center;
+}
+
+.my-row-college-fau{
+  color: white;
+}
+
+.my-row-college-ucf{
+  color: white;
+}
+
+.my-row-college-val{
+  color: white;
+}
+
+.my-row-college-val h4{
+  color: white;
+  font-size: 30px;
+  padding-left: 20px;
+}
+
+.my-row-college-ucf h4{
+  color: white;
+  font-size: 30px;
+  padding-left: 20px;
+}
+
+.my-row-college-fau h4{
+  color: white;
+  font-size: 30px;
+  padding-left: 20px;
+}
+
+.my-row-stats{
+  color: white;
+  opacity: .9;
+  font-size: 30;
+}
+
+.my-row-stats p{
+  padding-left: 40px;
+}
+
+.my-row-courses{
+  color: #FF8B3E;
+  font-size: 33;
+}
+
+.my-row-courses h4{
+  float: right;
+  padding-right: 20px;
+}
+
+.my-row-stats-right{
+  color: white;
+  opacity: .9;
+  font-size: 30;
+  height: 14vh;
+}
+
+.my-coll{
+}
+
+.my-coll-u{
+}
+
+.my-coll-stat{
+  height: 11vh;
+}
+
+.my-coll-stat-fau{
+  height: 8vh;
+}
+
+.my-row-stats-right p{
+  float: right;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.my-row-edu-spacer1{
+  height: 4vh;
+}
+
+.my-row-edu-spacer{
+  height: 2vh;
+}
+
+/*work-----------------*/
+
+.my-container-work{
+  width: 100%;
+  height: 80vh;
+  background-color: #FF8B3E;
+}
+
+.work-space{
+  height: 7vh;
+}
+
+.my-row-work{
+  height: 16vh;
+}
+
+.my-row-work h3{
+  font-size: 60px;
+  color: white;
+  text-align: center;
+}
+
+.my-row-title h4{
+  font-size: 30px;
+  color: white;
+}
+
+.my-row-title{
+  text-align: right;
+}
+
+.my-row-title-lg{
+  text-align: right;
+}
+
+.work-spacer{
+  height: 3vh;
+}
+
+.my-row-title-lg h4{
+  font-size: 30px;
+  color: white;
+}
+
+.my-row-info{
+  height: 6vh;
+}
+
+.my-row-info p{
+  text-align: left;
+  font-size: 20px;
+  color: black;
+  font-weight:  500;
+  line-height: 20px;
+}
+
+.my-row-yr h1{
+  font-size: 40px;
+  font-weight: bold;
+  color: black;
+  text-align: left;
+}
+
+.orange{
+  color: #24FFFD;
+}
+
+/*skills----------------------*/
+
+.my-container-skills{
+  width: 100%;
+  height: 115vh;
+  background-color: #191919;
+}
+
+.my-row-skills{
+  height: 20vh;
+  text-align: center;
+}
+
+.my-row-skills h4{
+  color: white;
+  font-size: 60px;
+}
+
+.my-row-perc img{
+  height: 20vh;
+}
+
+.my-row-perc{
+  text-align: center;
+}
+
+.my-row-skit{
+  height: 10vh;
+  text-align: center;
+}
+
+.my-row-skit h5{
+  color: white;
+  font-size: 30px;
+}
+
+.my-skill-space{
+  height: 3vh;
+}
+
+/*after-thought--------------*/
+
+.my-container-after{
+  width: 100%;
+  height: 42vh;
+  background-color: black;
+}
+
+.my-row-after p{
+  color: white;
+  font-size: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+.my-row-after span{
+  font-weight: bold;
+}
+
+.after-space{
+  height: 4vh;
+}
+
+.collll{
+}
+
+/*footer-----------------*/
+
+.my-container-footer{
+  width: 100%;
+  height: 2vh;
+  background-color: black;
+}
+
+.my-row-footer p{
+  color: white;
+  opacity: .8;
+  text-align: center;
+  font-size: 8px;
+
+  margin-top: auto;
+  margin-bottom: auto;
+}
