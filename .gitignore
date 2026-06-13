@@ -1,0 +1,20 @@
+node_modules/
+dist/
+.next/
+out/
+coverage/
+*.log
+.env
+.env.local
+.DS_Store
+
+# Foundry
+packages/contracts/out/
+packages/contracts/cache/
+packages/contracts/broadcast/
+packages/contracts/lib/
+
+# DB
+*.sqlite
+*.sqlite-journal
+apps/backend/data/
