@@ -19,3 +19,4 @@ packages/contracts/lib/
 *.sqlite-journal
 apps/backend/data/
 apps/web/tsconfig.tsbuildinfo
+.vercel

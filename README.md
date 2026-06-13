@@ -2,6 +2,10 @@
 
 **Real-time soccer athlete-performance prediction market on Base.**
 
+> 🔴 **Live demo:** **https://mobileresume.vercel.app** — fully interactive,
+> mobile-first, with continuously-live simulated World Cup matches (runs entirely
+> in the browser, no backend needed). Testnet / play-money only.
+
 Go **long** or **short** on the live performance of individual World Cup players.
 Each `(player, fixture)` is a market; live match data is distilled into a
 **Performance Score `PS ∈ [0,100]`**, and the "price of an athlete" is the live

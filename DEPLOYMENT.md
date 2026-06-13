@@ -3,6 +3,19 @@
 **Network:** Base Sepolia (chainId `84532`) · **Explorer:** https://sepolia.basescan.org
 **Deployed:** 2026-06-13 · ⚠️ Testnet / mock USDC only — no real value.
 
+## 🔴 Live web app — https://mobileresume.vercel.app
+
+Hosted on Vercel, fully interactive, no backend required: the web app runs the
+sim **in the browser** (`NEXT_PUBLIC_DEMO=1`, see `apps/web/src/lib/demoEngine.ts`)
+so it's a self-contained static-style deployment.
+
+**Vercel project config** (set once, via dashboard or API):
+- Root Directory: `apps/web` (Vercel installs from the pnpm-workspace root and builds the Next app)
+- Framework: Next.js · Output/Build/Install: defaults
+- Build env: `NEXT_PUBLIC_DEMO=1`
+
+Redeploy: `vercel deploy --prod --yes --scope <team>` from the repo root.
+
 ## Core contracts
 
 | Contract | Address |
