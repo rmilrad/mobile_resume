@@ -18,3 +18,4 @@ packages/contracts/lib/
 *.sqlite
 *.sqlite-journal
 apps/backend/data/
+apps/web/tsconfig.tsbuildinfo
