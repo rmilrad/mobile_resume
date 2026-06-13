@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
-import { WalletProvider } from "../wallet/WalletContext";
+import { AppProviders } from "../wallet/Providers";
 import { Header } from "../components/Header";
 import { BottomNav } from "../components/BottomNav";
 
@@ -20,14 +20,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
-        <WalletProvider>
+        <AppProviders>
           <div className="app">
             <div className="testnet-ribbon">⚽ TESTNET — PLAY MONEY · NOT FINANCIAL ADVICE</div>
             <Header />
             <div className="content">{children}</div>
             <BottomNav />
           </div>
-        </WalletProvider>
+        </AppProviders>
       </body>
     </html>
   );

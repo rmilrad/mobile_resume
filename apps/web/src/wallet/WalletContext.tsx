@@ -36,7 +36,8 @@ interface WalletApi extends WalletState {
   positionFor: (playerId: number, fixtureId: number, side: Side) => Position | undefined;
 }
 
-const WalletCtx = createContext<WalletApi | null>(null);
+export const WalletCtx = createContext<WalletApi | null>(null);
+export type { WalletApi };
 
 function load(): WalletState {
   if (typeof window === "undefined") return { connected: false, address: null, usdc: 0, positions: [] };
