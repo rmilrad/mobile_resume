@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "installCommand": "pnpm install --no-frozen-lockfile",
+  "buildCommand": "pnpm --filter @pitchmarket/web build",
+  "outputDirectory": "apps/web/.next",
+  "build": {
+    "env": {
+      "NEXT_PUBLIC_DEMO": "1"
+    }
+  }
+}
