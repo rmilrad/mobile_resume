@@ -9,7 +9,8 @@
     "./ps": "./src/ps/index.ts",
     "./market": "./src/market/index.ts",
     "./sim": "./src/sim/index.ts",
-    "./types": "./src/types/index.ts"
+    "./types": "./src/types/index.ts",
+    "./abis": "./src/abis/index.ts"
   },
   "scripts": {
     "test": "vitest",

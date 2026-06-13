@@ -1,0 +1,6 @@
+# Local-only deploy secrets — never commit
+.env.deploy
+.env.local
+broadcast/
+cache/
+out/
