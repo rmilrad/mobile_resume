@@ -1,0 +1,19 @@
+{
+  "name": "pitchmarket",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Real-time soccer athlete-performance prediction market on Base",
+  "packageManager": "pnpm@10.33.0",
+  "scripts": {
+    "test": "pnpm -r --filter ./packages/shared --filter ./apps/backend test run",
+    "test:shared": "pnpm --filter @pitchmarket/shared test run",
+    "test:backend": "pnpm --filter @pitchmarket/backend test run",
+    "test:contracts": "cd packages/contracts && forge test -vvv",
+    "build": "pnpm -r build",
+    "sim": "pnpm --filter @pitchmarket/shared sim"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.8"
+  }
+}

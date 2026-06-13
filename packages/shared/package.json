@@ -1,0 +1,24 @@
+{
+  "name": "@pitchmarket/shared",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./ps": "./src/ps/index.ts",
+    "./market": "./src/market/index.ts",
+    "./sim": "./src/sim/index.ts",
+    "./types": "./src/types/index.ts"
+  },
+  "scripts": {
+    "test": "vitest",
+    "build": "tsc -p tsconfig.json",
+    "sim": "tsx src/sim/cli.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.8"
+  }
+}
