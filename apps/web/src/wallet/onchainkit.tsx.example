@@ -1,0 +1,68 @@
+"use client";
+
+/**
+ * REAL WALLET MODE — Coinbase Smart Wallet + OnchainKit on Base Sepolia.
+ *
+ * This file is provided as the production wallet integration. To enable it:
+ *   1) pnpm --filter @pitchmarket/web add @coinbase/onchainkit wagmi viem @tanstack/react-query
+ *   2) rename this file to `onchainkit.tsx`
+ *   3) wrap the app with <OnchainProviders> in layout.tsx instead of (or in
+ *      addition to) WalletProvider, and back the WalletContext actions with the
+ *      contract calls below.
+ *
+ * The screens do not change: they only use the WalletContext API
+ * (balance/faucet/buy/positions/redeem), so swapping the implementation is local.
+ */
+
+import { OnchainKitProvider } from "@coinbase/onchainkit";
+import { base, baseSepolia } from "viem/chains";
+import { WagmiProvider, createConfig, http, useAccount, useWriteContract } from "wagmi";
+import { coinbaseWallet } from "wagmi/connectors";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import type { ReactNode } from "react";
+import { MarketAbi, MockUSDCAbi } from "@pitchmarket/shared/abis"; // exported from contracts build
+
+const chain = process.env.NEXT_PUBLIC_CHAIN === "mainnet" ? base : baseSepolia;
+
+export const wagmiConfig = createConfig({
+  chains: [chain],
+  connectors: [coinbaseWallet({ appName: "PitchMarket", preference: "smartWalletOnly" })],
+  transports: { [chain.id]: http(process.env.NEXT_PUBLIC_RPC_URL) },
+});
+
+const queryClient = new QueryClient();
+
+export function OnchainProviders({ children }: { children: ReactNode }) {
+  return (
+    <WagmiProvider config={wagmiConfig}>
+      <QueryClientProvider client={queryClient}>
+        <OnchainKitProvider
+          apiKey={process.env.NEXT_PUBLIC_ONCHAINKIT_API_KEY}
+          chain={chain}
+          config={{
+            paymaster: process.env.NEXT_PUBLIC_PAYMASTER_URL, // sponsored gas
+          }}
+        >
+          {children}
+        </OnchainKitProvider>
+      </QueryClientProvider>
+    </WagmiProvider>
+  );
+}
+
+/**
+ * Example: batched approve + buy in a single Smart Wallet signature.
+ * Use `useSendCalls` (EIP-5792) so the user signs once and gas is sponsored.
+ *
+ *   const { sendCalls } = useSendCalls();
+ *   sendCalls({
+ *     calls: [
+ *       { to: usdc, abi: MockUSDCAbi, functionName: "approve", args: [market, amount] },
+ *       { to: market, abi: MarketAbi, functionName: "buy", args: [isLong, amount, minOut] },
+ *     ],
+ *     capabilities: { paymasterService: { url: PAYMASTER_URL } },
+ *   });
+ *
+ * Redemption -> Market.redeem(longIn, shortIn); faucet -> MockUSDC.mint(addr, amount).
+ */
+export { useAccount, useWriteContract, MarketAbi, MockUSDCAbi };
